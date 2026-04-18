@@ -1,0 +1,120 @@
+<style>
+/* ICON */
+.jet-toggle__icon.icon-active {
+  display: none !important;
+}
+
+.jet-toggle__label-icon {
+  flex-shrink: 0;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.jet-toggle__icon.icon-normal {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.jet-toggle__icon.icon-normal svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.active-toggle .jet-toggle__icon.icon-normal {
+  transform: rotate(45deg);
+}
+
+/* PANEL */
+.jet-toggle__content {
+  overflow: hidden !important;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+</style>
+
+<script>
+(function ($) {
+
+  function openItem($item) {
+    var $panel = $item.find('.jet-toggle__content');
+    var height = $panel.find('.jet-toggle__content-inner').outerHeight(true);
+    $item.addClass('active-toggle');
+    $panel[0].style.height  = height + 'px';
+    $panel[0].style.opacity = '1';
+  }
+
+  function closeItem($item) {
+    var $panel = $item.find('.jet-toggle__content');
+    $panel[0].style.height = $panel.outerHeight() + 'px';
+    $panel[0].offsetHeight;
+    $panel[0].style.height  = '0px';
+    $panel[0].style.opacity = '0';
+    setTimeout(function () {
+      $item.removeClass('active-toggle');
+    }, 400);
+  }
+
+  function attachHandlers() {
+    $('.jet-toggle__control').each(function () {
+      var $control = $(this);
+      $control.off('click').off('click.jetAccordion').off('click.jetToggle');
+      var $clone = $control.clone(false);
+      $control.replaceWith($clone);
+
+      $clone.on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $item      = $clone.closest('.jet-toggle');
+        var $accordion = $item.closest('.jet-accordion__inner');
+        var isOpen     = $item.hasClass('active-toggle');
+
+        $accordion.find('.jet-toggle.active-toggle').each(function () {
+          if (!$(this).is($item)) closeItem($(this));
+        });
+
+        if (isOpen) {
+          closeItem($item);
+        } else {
+          openItem($item);
+        }
+      });
+    });
+
+    // Set correct initial state for all items
+    $('.jet-toggle').each(function () {
+      var $panel = $(this).find('.jet-toggle__content');
+      if ($(this).hasClass('active-toggle')) {
+        var height = $(this).find('.jet-toggle__content-inner').outerHeight(true);
+        $panel[0].style.height  = height + 'px';
+        $panel[0].style.opacity = '1';
+      } else {
+        $panel[0].style.height  = '0px';
+        $panel[0].style.opacity = '0';
+      }
+    });
+  }
+
+  $(document).ready(function () {
+    setTimeout(attachHandlers, 500);
+  });
+
+  $(document).on('jet-engine/listing/after-load', function () {
+    setTimeout(attachHandlers, 500);
+  });
+
+  $(window).on('elementor/frontend/init', function () {
+    elementorFrontend.hooks.addAction(
+      'frontend/element_ready/jet-listing-grid.default',
+      function () { setTimeout(attachHandlers, 500); }
+    );
+  });
+
+}(jQuery));
+</script>
