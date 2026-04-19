@@ -1,1 +1,7 @@
 
+selector input:focus {
+  border: none !important;
+  border-bottom: 1px solid #000 !important; /* change color to your desired one */
+  outline: none !important;
+  box-shadow: none !important;
+}
