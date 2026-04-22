@@ -1,0 +1,5 @@
+
+selector .swiper {
+    overflow: visible !important;
+      clip-path: inset(-100vw -100vw -100vw 0) !important;
+}
