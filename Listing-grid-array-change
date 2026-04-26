@@ -1,0 +1,80 @@
+/* ========================= */
+/* ICON CODE */
+/* ========================= */
+
+.testimonial-slider .slick-arrow:hover {
+    background: var(--e-global-color-9577e8c) !important;
+}
+
+/* ========================= */
+/* LEFT ARROW */
+/* ========================= */
+
+.testimonial-slider .prev-arrow svg {
+    display: none !important;
+}
+
+.testimonial-slider .prev-arrow::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%, -50%) rotate(180deg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all 0.3s ease-in-out;
+
+    /* Default Blue */
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='25' height='23' viewBox='0 0 25 23' fill='none'>\
+<path d='M13.4825 0.000856082L11.2458 2.23761L18.611 9.60284L0 9.60284L0 12.7664L18.611 12.7664L11.2458 20.1316L13.4825 22.3684L24.6663 11.1846L13.4825 0.000856082Z' fill='%23708AFF'/>\
+</svg>");
+}
+
+/* Hover Black */
+.testimonial-slider .prev-arrow:hover::before {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='25' height='23' viewBox='0 0 25 23' fill='none'>\
+<path d='M13.4825 0.000856082L11.2458 2.23761L18.611 9.60284L0 9.60284L0 12.7664L18.611 12.7664L11.2458 20.1316L13.4825 22.3684L24.6663 11.1846L13.4825 0.000856082Z' fill='black'/>\
+</svg>");
+}
+
+
+/* ========================= */
+/* RIGHT ARROW */
+/* ========================= */
+
+.testimonial-slider .next-arrow svg {
+    display: none !important;
+}
+
+.testimonial-slider .next-arrow::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%, -50%) rotate(180deg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all 0.3s ease-in-out;
+
+    /* Default Blue */
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='25' height='23' viewBox='0 0 25 23' fill='none'>\
+<path d='M13.4825 0.000856082L11.2458 2.23761L18.611 9.60284L0 9.60284L0 12.7664L18.611 12.7664L11.2458 20.1316L13.4825 22.3684L24.6663 11.1846L13.4825 0.000856082Z' fill='%23708AFF'/>\
+</svg>");
+}
+
+/* Hover Black */
+.testimonial-slider .next-arrow:hover::before {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='25' height='23' viewBox='0 0 25 23' fill='none'>\
+<path d='M13.4825 0.000856082L11.2458 2.23761L18.611 9.60284L0 9.60284L0 12.7664L18.611 12.7664L11.2458 20.1316L13.4825 22.3684L24.6663 11.1846L13.4825 0.000856082Z' fill='black'/>\
+</svg>");
+}
