@@ -1,0 +1,50 @@
+.jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-sub-menu .jet-mega-menu-item__title {
+    background: transparent;
+    padding: 8px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    display: block !important;
+    transition: background-color 0.3s ease !important;
+}
+.jet-mega-menu-sub-menu .jet-mega-menu-item__inner, .jet-mega-menu-item__inner .jet-mega-menu-item__title  {
+        transition: all 0.3s ease !important;
+}
+
+.jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-sub-menu .jet-mega-menu-item:hover>.jet-mega-menu-item__inner .jet-mega-menu-item__title {
+    color: white !important;
+}
+
+.jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-sub-menu .jet-mega-menu-item {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    flex-basis: 100% !important;
+    flex-grow: 1 !important;
+    flex-shrink: 0 !important;
+}
+
+.jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-sub-menu .jet-mega-menu-item__inner {
+    padding-right: 10px;
+}
+ .jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-item .jet-mega-menu-item--hover, .jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-sub-menu .jet-mega-menu-item.jet-mega-current-menu-item>.jet-mega-menu-item__inner {
+    background: var(--e-global-color-primary) !important;
+    transition: all .3s ease-in-out;
+}
+ul.jet-mega-menu-sub-menu__list {
+    padding: 6px !important;
+}
+a.jet-mega-menu-item__link.jet-mega-menu-item__link--sub-level {
+    width: 100%;
+}
+.jet-mega-menu-sub-menu {
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+}
+.jet-mega-menu-item__link.jet-mega-menu-item__link--sub-level:hover .jet-mega-menu-item__inner .jet-mega-menu-item__title {
+    color: white !important;
+}
+
+.jet-mega-menu.jet-mega-menu--animation-none.jet-mega-menu--layout-horizontal .jet-mega-menu-list .jet-mega-menu-sub-menu{
+        transition: all .3s ease;
+}
+.jet-mega-menu-sub-menu>.jet-mega-menu-sub-menu__list {
+    gap: 6px !important;
+}
