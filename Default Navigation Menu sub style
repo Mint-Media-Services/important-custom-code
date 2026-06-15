@@ -1,0 +1,33 @@
+.elementor-3673 .elementor-element.elementor-element-7095ae1 .jet-nav--horizontal {
+    gap: 24px;
+}
+
+.menu-item-link-sub{
+    border-radius: 8px;
+}
+
+.jet-nav__sub{
+    border-radius: 24px;
+}
+
+.jet-nav-link-text {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px !important;
+}
+
+/* underline element — only on non-sub items */
+.menu-item:not(.jet-nav-item-sub) > .menu-item-link .jet-nav-link-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease;
+}
+
+.menu-item:not(.jet-nav-item-sub) > .menu-item-link:hover .jet-nav-link-text::after {
+  width: 100%;
+}
